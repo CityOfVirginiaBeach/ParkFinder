@@ -1,0 +1,3 @@
+<Alloy>
+	<View id="mapView" ns="Ti.Map" platform="ios"/>
+</Alloy>

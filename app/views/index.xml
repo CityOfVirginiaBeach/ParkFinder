@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container">
+		<Require src="mapView" platform="ios" id="map"/>
+	</Window>
+</Alloy>

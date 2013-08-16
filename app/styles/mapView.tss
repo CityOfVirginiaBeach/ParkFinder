@@ -1,0 +1,13 @@
+
+".container" : {
+  
+},
+"#mapView":{
+	region: {
+		latitude: 36.77354,
+		latitudeDelta: 0.3,
+		longitude: -76.095,
+		longitudeDelta: 0.3
+	},
+	mapType: Ti.Map.STANDARD_TYPE
+}

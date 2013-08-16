@@ -1,3 +1,7 @@
-# Build folder and log file
-build/
+.DS_Store
 build.log
+build
+npm-debug.log
+tmp
+.map
+*.py
