@@ -3,7 +3,7 @@ exports.definition = {
 		columns: {
 		    "lat": "real",
 		    "lng": "real",
-		    "facilityId": "integer",
+		    "facilityId": "integer PRIMARY KEY",
 		    "title": "text",
 		    "zip": "text",
 		    "address": "text",

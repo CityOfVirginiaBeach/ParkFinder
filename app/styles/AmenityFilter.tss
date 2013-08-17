@@ -1,0 +1,8 @@
+
+".container" : {
+  
+},
+"#closeBtn" : {
+	top: '10dp',
+	left: '10dp'
+}

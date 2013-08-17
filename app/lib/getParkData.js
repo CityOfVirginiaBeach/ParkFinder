@@ -15,8 +15,10 @@ function getData(e) {
 	        json.amenities.forEach(function(e) {
 	        	var amenity = Alloy.createModel('Amenity', {
 	        		amenityId: e.ID,
-	        		title: e.title
+	        		title: e.title,
+	        		selected: true   //Initialize as true for amenity selection
 	        	});
+	        	amenity.save();
 	        	amenities.add(amenity);
 	        });
 
@@ -34,6 +36,7 @@ function getData(e) {
 	        		hours: e.hours,
 	        		url: e.url
 	        	});
+	        	facility.save();
 	        	facilities.add(facility);
 
 	        	for (var i = 0; i < e.amenities.length; i++) {
@@ -41,13 +44,12 @@ function getData(e) {
 	        			facilityId: e.ID,
 	        			amenityId: e.amenities[i]
 	        		});
-
+	        		facilityAmenity.save();
 	        		facilityAmenities.add(facilityAmenity);
 	        	}
 	        });
 
 	        facilities.trigger('loaded');
-	        // Ti.API.info(facilities.toJSON());
 	    }
 	});
 	xhr.open('GET', url);

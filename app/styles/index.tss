@@ -5,4 +5,11 @@
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	color: "#000"
-} 
+} ,
+"#filterButton": {
+	width: '48dp',
+	height: '48dp',
+	backgroundImage:"/images/filterButton.png",
+	left: '15dp',
+	bottom: '15dp'
+}
