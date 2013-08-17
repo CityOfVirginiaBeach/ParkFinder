@@ -7,6 +7,11 @@ function showFilterWindow(e) {
 	filterWindow.open({modal:true});
 }
 
+function showFacilityWindow(e) {
+	var facilityWindow = Alloy.createController('FacilityTableWindow').getView();
+	facilityWindow.open({modal:false});
+}
+
 getData();
 
 // Alloy.Collections.instance('Facility').fetch();

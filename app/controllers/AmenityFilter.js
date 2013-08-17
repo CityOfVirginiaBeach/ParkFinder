@@ -42,7 +42,7 @@ function clearSelections(e) {
 			amenityId: a.get("amenityId"),
 			selected: false
 		});
-	})
+	});
 }
 
 $.amenityFilterWindow.addEventListener("close", function(){

@@ -37,7 +37,7 @@ function plotFacilities() {
 			    pincolor:Titanium.Map.ANNOTATION_RED
 			});
 		$.mapView.addAnnotation(annotation);
-	})
+	});
 }
 
 facilities.on('loaded', function(e) {

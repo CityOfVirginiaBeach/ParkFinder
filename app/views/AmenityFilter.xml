@@ -6,7 +6,6 @@
         <LeftNavButton>
         	<Button id="clrBtn" top="-50dp" onClick="clearSelections" title="Clear" />
         </LeftNavButton>
-		<Button id="closeBtn" title="Close" onClick="closeWindow"/>
 		<TableView id="filterTableView" dataCollection="Amenity" dataTransform="transformFunction">
 			<TableViewRow title="{title}" amenityId="{amenityId}" onClick="toggleInFilter" hasCheck="{hasCheck}" />
 		</TableView>

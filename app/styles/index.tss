@@ -12,4 +12,11 @@
 	backgroundImage:"/images/filterButton.png",
 	left: '15dp',
 	bottom: '15dp'
+},
+"#facilityListButton": {
+	width: '48dp',
+	height: '48dp',
+	backgroundImage:"/images/tableViewButton.png",
+	right: '15dp',
+	bottom: '15dp'
 }

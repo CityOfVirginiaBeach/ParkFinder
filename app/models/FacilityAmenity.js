@@ -1,7 +1,7 @@
 exports.definition = {
 	config: {
 		columns: {
-			"facilityAmenityId": "INTEGER PRIMARY KEY AUTOINCREMENT"
+			"facilityAmenityId": "INTEGER PRIMARY KEY AUTOINCREMENT",
 		    "facilityId": "INTEGER",
 		    "amenityId": "INTEGER"
 		},
@@ -21,7 +21,6 @@ exports.definition = {
 	extendCollection: function(Collection) {
 		_.extend(Collection.prototype, {
 			// extended functions and properties go here
-			}
 		});
 
 		return Collection;

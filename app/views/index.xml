@@ -2,5 +2,6 @@
 	<Window class="container" title="Parks">
 		<Require src="mapView" platform="ios" id="map"/>
 		<Button id="filterButton" onClick="showFilterWindow" />
+		<Button id="facilityListButton" onClick="showFacilityWindow" />
 	</Window>
 </Alloy>

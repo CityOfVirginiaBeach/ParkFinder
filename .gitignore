@@ -9,3 +9,17 @@ Resources
 Resources/
 plugins
 plugins/
+
+Resources/alloy/controllers/index.js
+
+Resources/alloy/models/Amenity.js
+
+Resources/alloy/models/Facility.js
+
+Resources/alloy/models/FacilityAmenity.js
+
+Resources/alloy/styles/index.js
+
+Resources/alloy/styles/mapView.js
+
+Resources/getParkData.js

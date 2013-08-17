@@ -1,0 +1,13 @@
+<Alloy>
+	<Window class="container" id="facilityDetailsWindow">
+		<ListView id="facilityDetailsTableView">
+			<ListSection id="facilityDetailsTableViewSection" dataCollection="Facility" dataFilter="filterFunction">
+				<ListItem id="titleRow" title="{title}" />
+				<ListItem id="addressRow" title="{address}" />
+			</ListSection>
+			<ListSection id="facilityAmenitiesTableView" dataCollection="Amenity" headerTitle="Amenities">
+				<ListItem id="titleRow" title="{title}" />
+			</ListSection>
+		</ListView>
+	</Window>
+</Alloy>

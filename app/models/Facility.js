@@ -14,7 +14,7 @@ exports.definition = {
 		adapter: {
 			type: "sql",
 			collection_name: "Facility",
-			"idAttribute": "facilityId"
+			idAttribute: "facilityId"
 		}
 	},
 	extendModel: function(Model) {
@@ -27,6 +27,9 @@ exports.definition = {
 	extendCollection: function(Collection) {
 		_.extend(Collection.prototype, {
 			// extended functions and properties go here
+			comparator : function(facility) {
+        	    return facility.get('title');
+            }
 		});
 
 		return Collection;
