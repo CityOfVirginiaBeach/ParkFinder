@@ -7,3 +7,4 @@ tmp
 *.py
 Resources
 Resources/
+Resources/alloy/controllers/mapView.js
