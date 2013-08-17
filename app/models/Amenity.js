@@ -34,7 +34,9 @@ exports.definition = {
 	extendCollection: function(Collection) {
 		_.extend(Collection.prototype, {
 			// extended functions and properties go here
-			
+			comparator : function(amenity) {
+        	    return amenity.get('title');
+            }
 		});
 
 		return Collection;
