@@ -7,8 +7,6 @@ tmp
 *.py
 Resources
 Resources/
-plugins
-plugins/
 
 Resources/alloy/controllers/index.js
 
