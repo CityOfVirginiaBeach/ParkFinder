@@ -1,5 +1,8 @@
 <Alloy>
 	<Window class="container" id="facilityDetailsWindow">
+		<RightNavButton>
+            <Button id="btnSave" top="-50dp" onClick="closeWindow" title="OK" />
+        </RightNavButton>
 		<ListView id="facilityDetailsTableView">
 			<ListSection id="facilityDetailsTableViewSection" dataCollection="Facility" dataFilter="filterFunction">
 				<ListItem id="titleRow" title="{title}" />

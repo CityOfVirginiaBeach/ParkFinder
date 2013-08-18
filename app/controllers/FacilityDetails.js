@@ -25,6 +25,11 @@ function amenitiesFilterFunction(collection) {
 	return collection;
 }
 
+function closeWindow(e) {
+	var parent = Alloy.Globals.parent;
+	parent.close();
+}
+
 $.facilityDetailsWindow.addEventListener("close", function(){
     amenities.fetch();
     $.destroy();

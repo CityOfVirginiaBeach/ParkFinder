@@ -19,3 +19,5 @@ function showFacilityDetailsWindow(e) {
 $.navGroupWin.addEventListener("showFacilityDetailsForTarget",function(e){
 	showFacilityDetailsWindow({source:{facilityId:e.facilityId}});
 });
+
+Alloy.Globals.parent = $.navGroupWin;
