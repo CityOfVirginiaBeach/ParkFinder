@@ -9,5 +9,6 @@
 		longitude: -76.095,
 		longitudeDelta: 0.3
 	},
-	mapType: Ti.Map.STANDARD_TYPE
+	mapType: Ti.Map.STANDARD_TYPE,
+	enableZoomControls: false
 }

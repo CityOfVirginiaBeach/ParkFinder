@@ -6,9 +6,9 @@ var amenities = Alloy.Collections.instance('Amenity');
 facilities.trigger('change');
 // amenities.trigger('change');
 
-amenities.fetch({
-		query: 'SELECT * FROM Amenity WHERE amenityId IN (SELECT DISTINCT FacilityAmenity.amenityId FROM FacilityAmenity LEFT JOIN Facility ON FacilityAmenity.facilityId = Facility.facilityId WHERE Facility.facilityId = ' + targetId + ');'
-});
+// amenities.fetch({
+// 		query: 'SELECT * FROM Amenity WHERE amenityId IN (SELECT DISTINCT FacilityAmenity.amenityId FROM FacilityAmenity LEFT JOIN Facility ON FacilityAmenity.facilityId = Facility.facilityId WHERE Facility.facilityId = ' + targetId + ');'
+// });
 
 Ti.API.info(amenities.length);
 
@@ -17,7 +17,7 @@ function filterFunction(collection) {
 }
 
 function amenitiesFilterFunction(collection) {
-	Ti.API.info('SELECT * FROM Amenity WHERE amenityId IN (SELECT DISTINCT FacilityAmenity.amenityId FROM FacilityAmenity LEFT JOIN Facility ON FacilityAmenity.facilityId = Facility.facilityId WHERE Facility.facilityId = ' + targetId + ');');
+	// Ti.API.info('SELECT * FROM Amenity WHERE amenityId IN (SELECT DISTINCT FacilityAmenity.amenityId FROM FacilityAmenity LEFT JOIN Facility ON FacilityAmenity.facilityId = Facility.facilityId WHERE Facility.facilityId = ' + targetId + ');');
 	collection.fetch({
 			query: 'SELECT * FROM Amenity WHERE amenityId IN (SELECT DISTINCT FacilityAmenity.amenityId FROM FacilityAmenity LEFT JOIN Facility ON FacilityAmenity.facilityId = Facility.facilityId WHERE Facility.facilityId = ' + targetId + ');'
 	});
@@ -31,6 +31,6 @@ function closeWindow(e) {
 }
 
 $.facilityDetailsWindow.addEventListener("close", function(){
-    amenities.fetch();
+    // amenities.fetch();
     $.destroy();
 });

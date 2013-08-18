@@ -2,18 +2,26 @@
 var facilities = Alloy.Collections.instance('Facility');
 var amenities = Alloy.Collections.instance('Amenity');
 
+if (OS_ANDROID) {
+	var MapModule = require('ti.map');
+}
+
 function plotFacilities() {
 	$.mapView.removeAllAnnotations();
 
-	Ti.API.info(facilities.length);
+	// alert("Num of facilities before: " + facilities.length);
+
 	facilities.fetch({
+		reset: false,
 		query: 'SELECT * FROM Facility WHERE facilityId IN (SELECT DISTINCT FacilityAmenity.facilityId FROM FacilityAmenity LEFT JOIN Amenity ON FacilityAmenity.amenityId = Amenity.amenityId WHERE Amenity.selected = 1)'
 	});
-	Ti.API.info(facilities.length);
 
+	// facilities.fetch();
+
+	// alert("Num of facilities after: " + facilities.length);
 	var data = facilities.toJSON();
 	data.forEach(function(e){
-		var annotation = Ti.Map.createAnnotation({
+		var parameters = {
 				latitude:e.lat,
 			    longitude:e.lng,
 			    title:e.title,
@@ -21,11 +29,17 @@ function plotFacilities() {
 			    pincolor:Titanium.Map.ANNOTATION_RED,
 			    facilityId:e.facilityId,
 			    rightButton:'/images/infoRightBtn.png'
-			});
-		
+			};
 
-		$.mapView.addAnnotation(annotation);
+		if (OS_ANDROID) {
+			var annotation = Alloy.Globals.Map.createAnnotation(parameters);
+			$.mapView.addAnnotation(annotation);
+		} else  {
+			var annotation = Ti.Map.createAnnotation(parameters);
+			$.mapView.addAnnotation(annotation);
+		}
 	});
+	// alert('Done!!');
 }
 
 facilities.on('loaded', function(e) {

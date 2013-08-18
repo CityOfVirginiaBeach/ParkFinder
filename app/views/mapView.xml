@@ -1,3 +1,4 @@
 <Alloy>
+	<View id="mapView" ns="Alloy.Globals.Map" platform="android"/>
 	<View id="mapView" ns="Ti.Map" platform="ios"/>
 </Alloy>

@@ -10,6 +10,14 @@ exports.definition = {
 			collection_name: "Amenity",
 			idAttribute: "amenityId"
 		}
+		// URL: 'http://www.vbgov.com/_assets/apps/parkfinder/_.ashx?data=1',
+		// parentNode: 'amenities',
+
+		// adapter: {
+		// 	type: "sqlrest",
+		// 	collection_name: "Amenity",
+		// 	idAttribute: "amenityId"
+		// }
 	},
 	extendModel: function(Model) {
 		_.extend(Model.prototype, {

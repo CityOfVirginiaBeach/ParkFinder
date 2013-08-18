@@ -9,3 +9,6 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
+if(OS_ANDROID){
+	Alloy.Globals.Map = require('ti.map');
+}
