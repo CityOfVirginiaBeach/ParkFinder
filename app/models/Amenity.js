@@ -10,14 +10,6 @@ exports.definition = {
 			collection_name: "Amenity",
 			idAttribute: "amenityId"
 		}
-		// URL: 'http://www.vbgov.com/_assets/apps/parkfinder/_.ashx?data=1',
-		// parentNode: 'amenities',
-
-		// adapter: {
-		// 	type: "sqlrest",
-		// 	collection_name: "Amenity",
-		// 	idAttribute: "amenityId"
-		// }
 	},
 	extendModel: function(Model) {
 		_.extend(Model.prototype, {
@@ -44,6 +36,15 @@ exports.definition = {
 			// extended functions and properties go here
 			comparator : function(amenity) {
         	    return amenity.get('title');
+            },
+            filterByIds: function(idArray) {
+            	var results =  _(this.filter(function(e) {
+            		return _.indexOf(idArray,e.get("amenityId")) > -1;
+            	}));
+            	return results.value();
+            },
+            getSelectedIds: function() {
+            	return _.invoke(this.where({selected: true}), "get", "amenityId");
             }
 		});
 

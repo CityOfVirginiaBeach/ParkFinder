@@ -6,6 +6,9 @@
         <LeftNavButton>
         	<Button id="clrBtn" top="-50dp" onClick="clearSelections" title="Clear" />
         </LeftNavButton>
+        <Menu id="androidMenu" platform="android">
+        	<MenuItem id="clearItem" title="Clear Selections" onClick="clearSelections" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM" />
+        </Menu>
 		<TableView id="filterTableView" dataCollection="Amenity" dataTransform="transformFunction">
 			<TableViewRow title="{title}" amenityId="{amenityId}" onClick="toggleInFilter" hasCheck="{hasCheck}" />
 		</TableView>

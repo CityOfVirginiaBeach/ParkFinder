@@ -3,26 +3,16 @@ var targetId = args.facilityId;
 
 var facilities = Alloy.Collections.instance('Facility');
 var amenities = Alloy.Collections.instance('Amenity');
+var facilityAmenities = Alloy.Collections.instance('FacilityAmenity');
 facilities.trigger('change');
-// amenities.trigger('change');
-
-// amenities.fetch({
-// 		query: 'SELECT * FROM Amenity WHERE amenityId IN (SELECT DISTINCT FacilityAmenity.amenityId FROM FacilityAmenity LEFT JOIN Facility ON FacilityAmenity.facilityId = Facility.facilityId WHERE Facility.facilityId = ' + targetId + ');'
-// });
-
-Ti.API.info(amenities.length);
+amenities.trigger('change');
 
 function filterFunction(collection) {
     return collection.where({facilityId:targetId});
 }
 
 function amenitiesFilterFunction(collection) {
-	// Ti.API.info('SELECT * FROM Amenity WHERE amenityId IN (SELECT DISTINCT FacilityAmenity.amenityId FROM FacilityAmenity LEFT JOIN Facility ON FacilityAmenity.facilityId = Facility.facilityId WHERE Facility.facilityId = ' + targetId + ');');
-	collection.fetch({
-			query: 'SELECT * FROM Amenity WHERE amenityId IN (SELECT DISTINCT FacilityAmenity.amenityId FROM FacilityAmenity LEFT JOIN Facility ON FacilityAmenity.facilityId = Facility.facilityId WHERE Facility.facilityId = ' + targetId + ');'
-	});
-
-	return collection;
+	return collection.filterByIds(_.invoke(facilityAmenities.where({facilityId: targetId}), "get", "amenityId"));
 }
 
 function closeWindow(e) {
@@ -31,6 +21,5 @@ function closeWindow(e) {
 }
 
 $.facilityDetailsWindow.addEventListener("close", function(){
-    // amenities.fetch();
     $.destroy();
 });

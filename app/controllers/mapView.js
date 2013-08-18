@@ -1,6 +1,7 @@
 
 var facilities = Alloy.Collections.instance('Facility');
 var amenities = Alloy.Collections.instance('Amenity');
+var facilityAmenities = Alloy.Collections.instance('FacilityAmenity');
 
 if (OS_ANDROID) {
 	var MapModule = require('ti.map');
@@ -9,27 +10,24 @@ if (OS_ANDROID) {
 function plotFacilities() {
 	$.mapView.removeAllAnnotations();
 
-	// alert("Num of facilities before: " + facilities.length);
+	var selectedAmenities = amenities.getSelectedIds();
+	var facilitiesWithSelectedAmenitiesIds = facilityAmenities.filterByAmenityIdsAsArray(selectedAmenities);
+	var filteredFacilities = facilities.filterByIds(facilitiesWithSelectedAmenitiesIds);
+	
+	for (var i = 0; i < filteredFacilities.length; i++) {
+		var e = filteredFacilities[i].toJSON();
 
-	facilities.fetch({
-		reset: false,
-		query: 'SELECT * FROM Facility WHERE facilityId IN (SELECT DISTINCT FacilityAmenity.facilityId FROM FacilityAmenity LEFT JOIN Amenity ON FacilityAmenity.amenityId = Amenity.amenityId WHERE Amenity.selected = 1)'
-	});
-
-	// facilities.fetch();
-
-	// alert("Num of facilities after: " + facilities.length);
-	var data = facilities.toJSON();
-	data.forEach(function(e){
 		var parameters = {
-				latitude:e.lat,
+				latitude: e.lat,
 			    longitude:e.lng,
 			    title:e.title,
 			    subtitle:e.address,
 			    pincolor:Titanium.Map.ANNOTATION_RED,
 			    facilityId:e.facilityId,
 			    rightButton:'/images/infoRightBtn.png'
-			};
+		};
+
+		Ti.API.info(JSON.stringify(parameters));
 
 		if (OS_ANDROID) {
 			var annotation = Alloy.Globals.Map.createAnnotation(parameters);
@@ -38,8 +36,8 @@ function plotFacilities() {
 			var annotation = Ti.Map.createAnnotation(parameters);
 			$.mapView.addAnnotation(annotation);
 		}
-	});
-	// alert('Done!!');
+	}
+
 }
 
 facilities.on('loaded', function(e) {
@@ -47,7 +45,7 @@ facilities.on('loaded', function(e) {
 });
 
 $.mapView.addEventListener('click', function(e) {
-	if (e.clicksource === 'rightButton') {
+	if (e.clicksource === 'rightButton' || e.clicksource === 'rightPane' || e.clicksource === 'infoWindow') {
 		$.mapView.fireEvent('openFacilityDetails', {facilityId: e.annotation.facilityId});
 	}
 });

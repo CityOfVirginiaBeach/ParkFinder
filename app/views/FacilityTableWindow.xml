@@ -1,21 +1,17 @@
 <Alloy>
-	<!-- <View class="container">
-	</View> -->
 	<Window id="navGroupWin">
 		<NavigationGroup id="navgroup" platform="ios,mobileweb">
 			<Window class="facilityTableContainer" title="Facilities" id="facilityWindow">
 				<RightNavButton>
 		            <Button id="btnSave" top="-50dp" onClick="closeWindow" title="OK" />
 		        </RightNavButton>
-		        <TableView id="facilityTableView" dataCollection="Facility">
-		        	<TableViewRow title="{title}" facilityId="{facilityId}" dataFilter="facilityFilter" onClick="showFacilityDetailsWindow" />
+		        <TableView id="facilityTableView" dataCollection="Facility" dataFilter="facilityFilter">
+		        	<TableViewRow title="{title}" facilityId="{facilityId}"  onClick="showFacilityDetailsWindow" />
 		        </TableView>
 			</Window>
 		</NavigationGroup>
-		<!-- <Window class="facilityTableContainer" title="Facilities" id="facilityWindow" platform="android"> -->
-	        <TableView id="facilityTableView" dataCollection="Facility" platform="android">
-	        	<TableViewRow title="{title}" facilityId="{facilityId}" dataFilter="facilityFilter" onClick="showFacilityDetailsWindow" />
-	        </TableView>
-		<!-- </Window> -->
+        <TableView id="facilityTableView" dataCollection="Facility" platform="android">
+        	<TableViewRow title="{title}" facilityId="{facilityId}" dataFilter="facilityFilter" onClick="showFacilityDetailsWindow" />
+        </TableView>
 	</Window>
 </Alloy>

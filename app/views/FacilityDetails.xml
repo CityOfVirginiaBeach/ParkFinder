@@ -8,7 +8,7 @@
 				<ListItem id="titleRow" title="{title}" />
 				<ListItem id="addressRow" title="{address}" />
 			</ListSection>
-			<ListSection id="facilityAmenitiesTableView" dataCollection="Amenity" headerTitle="Amenities">
+			<ListSection id="facilityAmenitiesTableView" dataCollection="Amenity" headerTitle="Amenities" dataFilter="amenitiesFilterFunction">
 				<ListItem id="titleRow" title="{title}" />
 			</ListSection>
 		</ListView>

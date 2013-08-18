@@ -29,6 +29,12 @@ exports.definition = {
 			// extended functions and properties go here
 			comparator : function(facility) {
         	    return facility.get('title');
+            },
+            filterByIds: function(idArray) {
+            	var results = _(this.filter(function(e) {
+            		return _.indexOf(idArray,e.get("facilityId")) > -1;
+            	}));
+            	return results.value();
             }
 		});
 

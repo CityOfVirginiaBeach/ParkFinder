@@ -1,18 +1,10 @@
-var facilities = Alloy.Collections.instance('Facility');
-facilities.trigger('change');
+Alloy.Collections.Facility.trigger('change');
 
-// facilities.fetch({
-// 	query: 'SELECT * FROM Facility WHERE facilityId IN (SELECT DISTINCT FacilityAmenity.facilityId FROM FacilityAmenity LEFT JOIN Amenity ON FacilityAmenity.amenityId = Amenity.amenityId WHERE Amenity.selected = 1)'
-// });
-
-// facilities.fetch();
 
 function facilityFilter(collection) {
-	collection.fetch({
-		query: 'SELECT * FROM Facility WHERE facilityId IN (SELECT DISTINCT FacilityAmenity.facilityId FROM FacilityAmenity LEFT JOIN Amenity ON FacilityAmenity.amenityId = Amenity.amenityId WHERE Amenity.selected = 1)'
-	});
-
-	return collection;
+    return Alloy.Collections.Facility.filterByIds(
+        Alloy.Collections.FacilityAmenity.filterByAmenityIdsAsArray(
+            Alloy.Collections.Amenity.getSelectedIds()));
 }
 
 function closeWindow(e) {
@@ -35,7 +27,8 @@ $.navGroupWin.addEventListener("showFacilityDetailsForTarget",function(e){
 });
 
 $.navGroupWin.addEventListener("close", function(){
-    $.destroy();
+    //TODO - Appcelerator recommended, throws an error??
+    // $.destroy();
 });
 
 Alloy.Globals.parent = $.navGroupWin;
