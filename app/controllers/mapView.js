@@ -33,10 +33,7 @@ facilities.on('loaded', function(e) {
 });
 
 $.mapView.addEventListener('click', function(e) {
-	Ti.API.info(JSON.stringify(e));
 	if (e.clicksource === 'rightButton') {
-		Ti.API.info('Annotation clicked for: ' + e.annotation.title);
-	} else {
-		Ti.API.info('Other source: ' + e.clicksource);
+		$.mapView.fireEvent('openFacilityDetails', {facilityId: e.annotation.facilityId});
 	}
 });

@@ -14,8 +14,12 @@ function showFacilityWindow(e) {
 
 getData();
 
-// Alloy.Collections.instance('Facility').fetch();
-// Alloy.Collections.instance('Amenity').fetch();
-// Alloy.Collections.instance('FacilityAmenity').fetch();
-
 $.index.open();
+
+$.map.getView('mapView').addEventListener('openFacilityDetails', function(e) {
+	var facilityWindowController = Alloy.createController('FacilityTableWindow');
+	var facilityWindowView = facilityWindowController.getView();
+	
+	facilityWindowView.fireEvent('showFacilityDetailsForTarget',{facilityId:e.facilityId});
+	facilityWindowView.open({modal:false});
+});
