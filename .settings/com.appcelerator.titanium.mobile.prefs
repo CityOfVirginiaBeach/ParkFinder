@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+iosLaunchConfigurationAttributes/ATTR_MINIFY=true
+iosLaunchConfigurationAttributes/ATTR_PROJECT_NAME=ParkFinder
+iosLaunchConfigurationAttributes/appid=com.vbgov.parkfinder
+iosLaunchConfigurationAttributes/certificate=City of Virginia Beach (M4WR6E493U)
+iosLaunchConfigurationAttributes/distribute_path=/Users/cgolding/Desktop
+iosLaunchConfigurationAttributes/keychain=
+iosLaunchConfigurationAttributes/output_format=ipa
+iosLaunchConfigurationAttributes/sdk_version=6.1
+iosLaunchConfigurationAttributes/uuid=C22580BF-4123-4DC2-AC70-4C7BA95B4387

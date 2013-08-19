@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+provisioning_profiles/adhoc/8B398EF7-924F-41DC-88E2-46D2DDC08482/appid=com.vbgov.parkingevents
+provisioning_profiles/adhoc/8B398EF7-924F-41DC-88E2-46D2DDC08482/name=ParkingEventsAdHoc
+provisioning_profiles/adhoc/8B398EF7-924F-41DC-88E2-46D2DDC08482/uuid=8B398EF7-924F-41DC-88E2-46D2DDC08482
+provisioning_profiles/adhoc/97A64C73-9A65-478C-9FBC-AE66C8825771/appid=com.rabidmonkeyware.webcomix
+provisioning_profiles/adhoc/97A64C73-9A65-478C-9FBC-AE66C8825771/name=DistribProv
+provisioning_profiles/adhoc/97A64C73-9A65-478C-9FBC-AE66C8825771/uuid=97A64C73-9A65-478C-9FBC-AE66C8825771
+provisioning_profiles/adhoc/C22580BF-4123-4DC2-AC70-4C7BA95B4387/appid=com.vbgov.*
+provisioning_profiles/adhoc/C22580BF-4123-4DC2-AC70-4C7BA95B4387/name=ParkFinder-Adhoc
+provisioning_profiles/adhoc/C22580BF-4123-4DC2-AC70-4C7BA95B4387/uuid=C22580BF-4123-4DC2-AC70-4C7BA95B4387
