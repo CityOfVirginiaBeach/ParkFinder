@@ -1,5 +1,3 @@
-// Ti.include('getParkData.js');
- 
 function getData(e) {
 	var url = "http://www.vbgov.com/_assets/apps/parkfinder/_.ashx?data=1";
 	var json;
