@@ -1,7 +1,18 @@
-function getData(e) {
+/**
+ * @fileOverview Initializer for ParkFinder
+ * @name index
+ * @namespace index
+ * @author  Chris Golding
+ */
+
+
+/**
+ * Pulls data from JSON feed on vbgov.com and creates/populates amenity, facility, and facility amenity collections
+ * @memberOf index
+ */
+function getData() {
 	var url = "http://www.vbgov.com/_assets/apps/parkfinder/_.ashx?data=1";
 	var json;
-	Ti.API.info("Getting Data!");
 	var xhr = Ti.Network.createHTTPClient({
 	    onload: function() {
 	        json = JSON.parse(this.responseText);
@@ -49,12 +60,20 @@ function getData(e) {
 	xhr.send();
 }
 
-function showFilterWindow(e) {
+/**
+ * Displays the filter window
+ * @memberOf index
+ */
+function showFilterWindow() {
 	var filterWindow = Alloy.createController('AmenityFilter').getView();
 	filterWindow.open({modal:true});
 }
 
-function showFacilityWindow(e) {
+/**
+ * Displays the facility window
+ * @memberOf index
+ */
+function showFacilityWindow() {
 	var facilityWindow = Alloy.createController('FacilityTableWindow').getView();
 	facilityWindow.open({modal:false});
 }
@@ -63,6 +82,13 @@ getData();
 
 $.index.open();
 
+/**
+ * Launches the facility detail window.
+ * Note: This is only used on Android
+ *
+ * @memberOf index
+ * @param  {Titanium.Event} e - the facilityId of the facility
+ */
 $.map.getView('mapView').addEventListener('openFacilityDetails', function(e) {
 	if (OS_ANDROID) {
 		var arg = {
