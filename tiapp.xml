@@ -46,7 +46,7 @@
             <permission android:name="com.vbgov.parkfinder.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
             <application>
                 <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
-                <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDz-312xtHQZDeKtS9A7frVS1cGdacLOn0"/>
+                <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="<ADD YOUR VALUE>"/>
             </application>
         </manifest>
     </android>
