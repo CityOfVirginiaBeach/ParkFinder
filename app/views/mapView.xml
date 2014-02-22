@@ -1,4 +1,3 @@
 <Alloy>
 	<View id="mapView" ns="Alloy.Globals.Map" />
-	<!-- <View id="mapView" ns="Ti.Map" platform="ios"/> -->
 </Alloy>

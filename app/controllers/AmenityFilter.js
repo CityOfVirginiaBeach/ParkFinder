@@ -19,11 +19,11 @@ amenities.trigger('change');
 function transformFunction(model) {
  
     var transform = model.toJSON();
-    if (transform.selected) {
-    	transform.hasCheck = true;
-    } else {
-    	transform.hasCheck = false;
-    }
+	if (transform.selected) {
+		transform.hasCheck = true;
+	} else {
+		transform.hasCheck = false;
+	}
 
     return transform;
 }
@@ -78,5 +78,5 @@ function clearSelections(e) {
  */
 $.amenityFilterWindow.addEventListener("close", function(){
     facilities.trigger('loaded');
-    $.destroy();
+    // $.destroy();
 });

@@ -39,7 +39,7 @@ function showFacilityDetailsWindow(e) {
     if (OS_ANDROID) {
     	Alloy.createController('FacilityDetails', arg).getView().open({modal:false});
     } else {
-    	$.navgroup.open(Alloy.createController('FacilityDetails', arg).getView());
+    	$.navGroupWin.openWindow(Alloy.createController('FacilityDetails', arg).getView());
     }
 }
 

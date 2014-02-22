@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="filterContainer" title="Amenities" id="amenityFilterWindow">
+	<Window class="filterContainer" title="Amenities" id="amenityFilterWindow" platform="android">
 		<RightNavButton>
             <Button id="btnSave" top="-50dp" onClick="closeWindow" title="OK" />
         </RightNavButton>
@@ -13,4 +13,20 @@
 			<TableViewRow title="{title}" amenityId="{amenityId}" onClick="toggleInFilter" hasCheck="{hasCheck}" />
 		</TableView>
 	</Window>
+    <NavigationWindow platform="ios" id="amenityFilterWindow">
+        <Window class="filterContainer" title="Amenities" >
+        <RightNavButton>
+            <Button id="btnSave" top="-50dp" onClick="closeWindow" title="OK" />
+        </RightNavButton>
+        <LeftNavButton>
+            <Button id="clrBtn" top="-50dp" onClick="clearSelections" title="Clear" />
+        </LeftNavButton>
+        <Menu id="androidMenu" platform="android">
+            <MenuItem id="clearItem" title="Clear Selections" onClick="clearSelections" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM" />
+        </Menu>
+        <TableView id="filterTableView" dataCollection="Amenity" dataTransform="transformFunction">
+            <TableViewRow title="{title}" amenityId="{amenityId}" onClick="toggleInFilter" hasCheck="{hasCheck}" />
+        </TableView>
+    </Window>
+    </NavigationWindow>
 </Alloy>

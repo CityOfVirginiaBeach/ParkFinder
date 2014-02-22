@@ -1,6 +1,5 @@
 <Alloy>
-	<Window id="navGroupWin">
-		<NavigationGroup id="navgroup" platform="ios,mobileweb">
+	<NavigationWindow id="navGroupWin" platform="ios,mobileweb">
 			<Window class="facilityTableContainer" title="Facilities" id="facilityWindow">
 				<RightNavButton>
 		            <Button id="btnSave" top="-50dp" onClick="closeWindow" title="OK" />
@@ -9,7 +8,8 @@
 		        	<TableViewRow title="{title}" facilityId="{facilityId}"  onClick="showFacilityDetailsWindow" />
 		        </TableView>
 			</Window>
-		</NavigationGroup>
+		</NavigationWindow>
+		<Window platform="android" id="navGroupWin">
         <TableView id="facilityTableView" dataCollection="Facility" platform="android">
         	<TableViewRow title="{title}" facilityId="{facilityId}" dataFilter="facilityFilter" onClick="showFacilityDetailsWindow" />
         </TableView>
