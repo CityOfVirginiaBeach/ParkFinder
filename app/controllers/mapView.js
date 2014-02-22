@@ -32,20 +32,20 @@ function plotFacilities() {
 			    longitude:e.lng,
 			    title:e.title,
 			    subtitle:e.address,
-			    pincolor:Titanium.Map.ANNOTATION_RED,
+			    // pincolor:Titanium.Map.ANNOTATION_RED,
 			    facilityId:e.facilityId,
 			    rightButton:'/images/infoRightBtn.png'
 		};
 
 		Ti.API.info(JSON.stringify(parameters));
 
-		if (OS_ANDROID) {
+		// if (OS_ANDROID) {
 			var annotation = Alloy.Globals.Map.createAnnotation(parameters);
 			$.mapView.addAnnotation(annotation);
-		} else  {
-			var annotation = Ti.Map.createAnnotation(parameters);
-			$.mapView.addAnnotation(annotation);
-		}
+		// } else  {
+		// 	var annotation = Ti.Map.createAnnotation(parameters);
+		// 	$.mapView.addAnnotation(annotation);
+		// }
 	}
 
 }

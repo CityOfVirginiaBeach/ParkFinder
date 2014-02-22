@@ -46,7 +46,7 @@
             <permission android:name="com.vbgov.parkfinder.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
             <application>
                 <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
-                <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="<ADD YOUR VALUE>"/>
+                <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDG0ppyZMktes9I9tlsH1jZ2UdVhSN8k8o"/>
             </application>
         </manifest>
     </android>
@@ -60,6 +60,7 @@
     </mobileweb>
     <modules>
         <module platform="android">ti.map</module>
+        <module platform="iphone">ti.map</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
@@ -69,7 +70,7 @@
         <target device="mobileweb">true</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>3.1.2.GA</sdk-version>
+    <sdk-version>3.2.0.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
